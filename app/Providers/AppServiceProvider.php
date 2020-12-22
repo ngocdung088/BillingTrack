@@ -25,11 +25,10 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(UrlGenerator $url)
+    public function boot()
     {
-        if(env('APP_ENV') !== 'local')
-        {
-            $url->forceSchema('https');
+        if (App::environment('production')) {
+            URL::forceScheme('https');
         }
         if (config('proxies.trust_all'))
         {
