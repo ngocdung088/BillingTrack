@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 <link href="{{ asset('favicon.png') }}" rel="icon" type="image/png">
 {!! Html::style('css/jquery-ui-themes/'.config('bt.jquiTheme').'/jquery-ui.min.css') !!}
