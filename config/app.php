@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://billing.madcoder.tech'),
+    'url' => env('APP_URL', 'http://billing.madcoder.tech'),
 
     /*
     |--------------------------------------------------------------------------
