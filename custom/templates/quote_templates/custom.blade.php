@@ -121,20 +121,20 @@
     @endforeach
 
     <tr>
-        <td colspan="4" class="amount">{{ mb_strtoupper(trans('bt.subtotal')) }}</td>
+        <td colspan="3" class="amount">{{ mb_strtoupper(trans('bt.subtotal')) }}</td>
         <td class="amount">{{ $quote->amount->formatted_subtotal }}</td>
     </tr>
 
     @if ($quote->discount > 0)
         <tr>
-            <td colspan="4" class="amount">{{ mb_strtoupper(trans('bt.discount')) }}</td>
+            <td colspan="3" class="amount">{{ mb_strtoupper(trans('bt.discount')) }}</td>
             <td class="amount">{{ $quote->amount->formatted_discount }}</td>
         </tr>
     @endif
 
     @foreach ($quote->summarized_taxes as $tax)
         <tr>
-            <td colspan="4" class="amount">{{ mb_strtoupper($tax->name) }} ({{ $tax->percent }})</td>
+            <td colspan="3" class="amount">{{ mb_strtoupper($tax->name) }} ({{ $tax->percent }})</td>
             <td class="amount">{{ $tax->total }}</td>
         </tr>
     @endforeach
