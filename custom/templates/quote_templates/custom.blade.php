@@ -102,7 +102,7 @@
 <table class="alternate">
     <thead>
     <tr>
-        <th>{{ mb_strtoupper(trans('bt.number_id')) }}</th>
+        <th>No. </th>
         <th>{{ mb_strtoupper(trans('bt.description')) }}</th>
 {{--        <th class="amount">{{ mb_strtoupper(trans('bt.quantity')) }}</th>--}}
         <th class="amount">{{ mb_strtoupper(trans('bt.price')) }}</th>
