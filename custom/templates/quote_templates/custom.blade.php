@@ -140,7 +140,7 @@
     @endforeach
 
     <tr>
-        <td colspan="4" class="amount">{{ mb_strtoupper(trans('bt.total')) }}</td>
+        <td colspan="3" class="amount">{{ mb_strtoupper(trans('bt.total')) }}</td>
         <td class="amount">{{ $quote->amount->formatted_total }}</td>
     </tr>
     </tbody>
