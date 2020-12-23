@@ -102,9 +102,9 @@
 <table class="alternate">
     <thead>
     <tr>
-        <th>{{ mb_strtoupper(trans('bt.product')) }}</th>
+        <th>{{ mb_strtoupper(trans('bt.number_id')) }}</th>
         <th>{{ mb_strtoupper(trans('bt.description')) }}</th>
-        <th class="amount">{{ mb_strtoupper(trans('bt.quantity')) }}</th>
+{{--        <th class="amount">{{ mb_strtoupper(trans('bt.quantity')) }}</th>--}}
         <th class="amount">{{ mb_strtoupper(trans('bt.price')) }}</th>
         <th class="amount">{{ mb_strtoupper(trans('bt.total')) }}</th>
     </tr>
@@ -112,9 +112,9 @@
     <tbody>
     @foreach ($quote->items as $item)
         <tr>
-            <td>{!! $item->name !!}</td>
+            <td>{!! $item->custom->column_1 !!}</td>
             <td>{!! $item->formatted_description !!}</td>
-            <td nowrap class="amount">{{ $item->formatted_quantity }}</td>
+{{--            <td nowrap class="amount">{{ $item->formatted_quantity }}</td>--}}
             <td nowrap class="amount">{{ $item->formatted_price }}</td>
             <td nowrap class="amount">{{ $item->amount->formatted_subtotal }}</td>
         </tr>
