@@ -112,7 +112,7 @@
     <tbody>
     @foreach ($quote->items as $item)
         <tr>
-            <td>{!! $item->custom->column_1 !!}</td>
+            <td>{!! $item->display_order !!}</td>
             <td>{!! $item->formatted_description !!}</td>
 {{--            <td nowrap class="amount">{{ $item->formatted_quantity }}</td>--}}
             <td nowrap class="amount">{{ $item->formatted_price }}</td>
