@@ -43,7 +43,7 @@
             border-bottom: 1px solid #C1CED9;
             white-space: nowrap;
             font-weight: normal;
-            text-align: center;
+            text-align: left;
         }
 
         td {
@@ -66,7 +66,16 @@
         .terms {
             padding: 10px;
         }
-
+        .summary {
+            padding: 10px;
+        }
+        .submit-by {
+            height: 150px;
+            width: 200px;
+            text-align: center;
+            position: absolute;
+            bottom: 100px;
+        }
         .footer {
             position: fixed;
             height: 50px;
@@ -98,12 +107,16 @@
         </td>
     </tr>
 </table>
-
+@if ($quote->summary) <div class="summary">
+    <h4>{{ trans('bt.job_summary') }}</h4>
+    <span>{{ $quote->summary }}</span>
+</div>
+@endif
 <table class="alternate">
     <thead>
     <tr>
-        <th>No. </th>
-        <th>{{ mb_strtoupper(trans('bt.description')) }}</th>
+        <th>{{ trans('bt.number_id') }}</th>
+        <th>{{ trans('bt.task') }}</th>
 {{--        <th class="amount">{{ mb_strtoupper(trans('bt.quantity')) }}</th>--}}
         <th class="amount">{{ mb_strtoupper(trans('bt.price')) }}</th>
         <th class="amount">{{ mb_strtoupper(trans('bt.total')) }}</th>
