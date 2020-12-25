@@ -17,8 +17,6 @@ use BT\Support\Directory;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,9 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (App::environment('production')) {
-            URL::forceScheme('https');
-        }
         if (config('proxies.trust_all'))
         {
             request()->setTrustedProxies([request()->getClientIp()]);
