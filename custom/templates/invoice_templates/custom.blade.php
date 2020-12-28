@@ -43,7 +43,7 @@
             border-bottom: 1px solid #C1CED9;
             white-space: nowrap;
             font-weight: normal;
-            text-align: center;
+            text-align: left;
         }
 
         td {
@@ -102,9 +102,9 @@
 <table class="alternate">
     <thead>
     <tr>
-        <th>{{ mb_strtoupper(trans('bt.product')) }}</th>
+        <th>{{ trans('bt.number_id') }}</th>
         <th>{{ mb_strtoupper(trans('bt.description')) }}</th>
-        <th class="amount">{{ mb_strtoupper(trans('bt.quantity')) }}</th>
+{{--        <th class="amount">{{ mb_strtoupper(trans('bt.quantity')) }}</th>--}}
         <th class="amount">{{ mb_strtoupper(trans('bt.price')) }}</th>
         <th class="amount">{{ mb_strtoupper(trans('bt.total')) }}</th>
     </tr>
@@ -112,43 +112,43 @@
     <tbody>
     @foreach ($invoice->items as $item)
         <tr>
-            <td>{!! $item->name !!}</td>
+            <td>{!! $item->display_order !!}</td>
             <td>{!! $item->formatted_description !!}</td>
-            <td nowrap class="amount">{{ $item->formatted_quantity }}</td>
+{{--            <td nowrap class="amount">{{ $item->formatted_quantity }}</td>--}}
             <td nowrap class="amount">{{ $item->formatted_price }}</td>
             <td nowrap class="amount">{{ $item->amount->formatted_subtotal }}</td>
         </tr>
     @endforeach
 
     <tr>
-        <td colspan="4" class="amount">{{ mb_strtoupper(trans('bt.subtotal')) }}</td>
+        <td colspan="3" class="amount">{{ mb_strtoupper(trans('bt.subtotal')) }}</td>
         <td class="amount">{{ $invoice->amount->formatted_subtotal }}</td>
     </tr>
 
     @if ($invoice->discount > 0)
         <tr>
-            <td colspan="4" class="amount">{{ mb_strtoupper(trans('bt.discount')) }}</td>
+            <td colspan="3" class="amount">{{ mb_strtoupper(trans('bt.discount')) }}</td>
             <td class="amount">{{ $invoice->amount->formatted_discount }}</td>
         </tr>
     @endif
 
     @foreach ($invoice->summarized_taxes as $tax)
         <tr>
-            <td colspan="4" class="amount">{{ mb_strtoupper($tax->name) }} ({{ $tax->percent }})</td>
+            <td colspan="3" class="amount">{{ mb_strtoupper($tax->name) }} ({{ $tax->percent }})</td>
             <td class="amount">{{ $tax->total }}</td>
         </tr>
     @endforeach
 
     <tr>
-        <td colspan="4" class="amount">{{ mb_strtoupper(trans('bt.total')) }}</td>
+        <td colspan="3" class="amount">{{ mb_strtoupper(trans('bt.total')) }}</td>
         <td class="amount">{{ $invoice->amount->formatted_total }}</td>
     </tr>
     <tr>
-        <td colspan="4" class="amount">{{ mb_strtoupper(trans('bt.paid')) }}</td>
+        <td colspan="3" class="amount">{{ mb_strtoupper(trans('bt.paid')) }}</td>
         <td class="amount">{{ $invoice->amount->formatted_paid }}</td>
     </tr>
     <tr>
-        <td colspan="4" class="amount">{{ mb_strtoupper(trans('bt.balance')) }}</td>
+        <td colspan="3" class="amount">{{ mb_strtoupper(trans('bt.balance')) }}</td>
         <td class="amount">{{ $invoice->amount->formatted_balance }}</td>
     </tr>
     </tbody>
