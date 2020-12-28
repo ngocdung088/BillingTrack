@@ -12,7 +12,7 @@
 
 
 namespace BT\Providers;
-
+use App;
 use BT\Support\Directory;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Facades\File;
